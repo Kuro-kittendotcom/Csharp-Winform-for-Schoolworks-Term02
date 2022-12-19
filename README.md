@@ -4,3 +4,5 @@
 *** วิธีการดาวน์โหลด : กดตรงปุ่ม Code ที่สีเขียว ๆ จากนั้นกด Download ZIP ***
 
 [EN] - This project is made for schoolworks only. 
+
+Note : This project can be open by Visual Studio 2010 or newer.
