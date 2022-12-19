@@ -5,4 +5,4 @@
 
 [EN] - This project is made for schoolworks only. 
 
-Note : This project can be open by Visual Studio 2010 or newer.
+Note : This project can be opened by Visual Studio 2010 or newer.
