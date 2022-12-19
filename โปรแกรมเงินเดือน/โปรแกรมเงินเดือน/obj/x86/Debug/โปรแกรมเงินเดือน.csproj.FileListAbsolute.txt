@@ -1,0 +1,8 @@
+D:\01. Dev Project\VS2010 - School Project\โปรแกรมเงินเดือน\โปรแกรมเงินเดือน\bin\Debug\โปรแกรมเงินเดือน.exe
+D:\01. Dev Project\VS2010 - School Project\โปรแกรมเงินเดือน\โปรแกรมเงินเดือน\bin\Debug\โปรแกรมเงินเดือน.pdb
+D:\01. Dev Project\VS2010 - School Project\โปรแกรมเงินเดือน\โปรแกรมเงินเดือน\obj\x86\Debug\โปรแกรมเงินเดือน.Form1.resources
+D:\01. Dev Project\VS2010 - School Project\โปรแกรมเงินเดือน\โปรแกรมเงินเดือน\obj\x86\Debug\โปรแกรมเงินเดือน.Properties.Resources.resources
+D:\01. Dev Project\VS2010 - School Project\โปรแกรมเงินเดือน\โปรแกรมเงินเดือน\obj\x86\Debug\โปรแกรมเงินเดือน.csproj.GenerateResource.Cache
+D:\01. Dev Project\VS2010 - School Project\โปรแกรมเงินเดือน\โปรแกรมเงินเดือน\obj\x86\Debug\โปรแกรมเงินเดือน.exe
+D:\01. Dev Project\VS2010 - School Project\โปรแกรมเงินเดือน\โปรแกรมเงินเดือน\obj\x86\Debug\โปรแกรมเงินเดือน.pdb
+D:\01. Dev Project\VS2010 - School Project\โปรแกรมเงินเดือน\โปรแกรมเงินเดือน\bin\Debug\โปรแกรมเงินเดือน.exe.config

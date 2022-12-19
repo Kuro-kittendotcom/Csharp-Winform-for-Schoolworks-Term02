@@ -1,0 +1,162 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+
+///// Read ME PLS! ////////////////////////////////////////////////////////////////////////
+///// โปรแกรมนี้ค่อนข้างซับซ้อนนิดหน่อย แต่ถ้าเรา import รูปเข้าโปรเจ็กต์ได้ทุกอย่างจะง่ายไปเลย         /////
+///// โดยวิธีการคือ 1. ไปที่ Solution Explorer --> Properties --> กด Resources.resx สองครั้ง /////
+///// 2. กด สามเหลี่ยมเล็ก ๆ ตรงด้านหลังของ Add Resource และค้นหารูปที่ต้องการ จากนั้นกดตกลง     /////
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////// Credit : Kuro_kitten ///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+namespace โปรแกรมรายชื่อนักเรียน
+{
+    public partial class Form1 : Form
+    {
+        //ประกาศตัวแปรประเภท string array และ string
+        string[] sid = { "001", "002", "003", "004", "005" }; //รหัสนักเรียน
+        string name = "", bday = "", age = "", height = "", gb = ""; //ค่าเริ่มต้นของตัวแปร
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            groupBox1.Visible = false;
+            label3.Text = "";
+            //ซ่อน object จากหน้าฟอร์ม
+        }
+
+        public void clear() //เมธอด clear ใช้รวมคำสั่งสำหรับการรีเซ็ท หรือล้าง object
+        {
+            label2.Text = "";
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            groupBox1.Visible = false;
+            textBox1.Clear();
+            textBox1.Focus();
+            
+        }
+
+        public void hpB_gB() //เมธอด hpB_gB ใช้รวมคำสั่งสำหรับการซ่อนรูปกับกล่องจัดกลุ่ม
+        {
+            pictureBox2.Visible = false;
+            groupBox1.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string id = textBox1.Text;
+
+            if (id == sid[0]) //ถ้า id = รหัสนักเรียนในตำแหน่งที่ 1 ของ string[] sid
+            {
+                name = "Nishizumi Miho";
+                bday = "วันที่ 23 ตุลาคม";
+                age = "16 ปี"; 
+                height = "158 ซม.";
+                gb = "A";
+                pictureBox2.Image = Properties.Resources.s1; //แสดงรูปจากไฟล์รูปที่ชื่อ s1 ใน Resources.resx
+            }
+            if (id == sid[1]) //ถ้า id = รหัสนักเรียนในตำแหน่งที่ 2 ของ string[] sid
+            {
+                name = "Nishizumi Maho"; 
+                bday = "วันที่ 1 กรกฎาคม"; 
+                age = "18 ปี"; 
+                height = "163 ซม."; 
+                gb = "A";
+                pictureBox2.Image = Properties.Resources.s2; //แสดงรูปจากไฟล์รูปที่ชื่อ s2 ใน Resources.resx
+            }
+            if (id == sid[2]) //ถ้า id = รหัสนักเรียนในตำแหน่งที่ 3 ของ string[] sid
+            {
+                name = "Shimada Arisu"; 
+                bday = "วันที่ 24 ตุลาคม"; 
+                age = "15 ปี";  
+                height = "139 ซม."; 
+                gb = "O";
+                pictureBox2.Image = Properties.Resources.s3; //แสดงรูปจากไฟล์รูปที่ชื่อ s3 ใน Resources.resx
+            }
+            if (id == sid[3]) //ถ้า id = รหัสนักเรียนในตำแหน่งที่ 4 ของ string[] sid
+            {
+                name = "Darjeeling";
+                bday = "วันที่ 17 กันยายน";
+                age = "18 ปี"; 
+                height = "158 ซม."; 
+                gb = "AB";
+                pictureBox2.Image = Properties.Resources.s4; //แสดงรูปจากไฟล์รูปที่ชื่อ s4 ใน Resources.resx
+            }
+            if (id == sid[4]) //ถ้า id = รหัสนักเรียนในตำแหน่งที่ 5 ของ string[] sid
+            {
+                name = "Mika"; 
+                bday = "วันที่ 30 พฤศจิกายน"; 
+                age = "16 ปี"; 
+                height = "161 ซม."; 
+                gb = "B";
+                pictureBox2.Image = Properties.Resources.s5; //แสดงรูปจากไฟล์รูปที่ชื่อ s5 ใน Resources.resx
+            }
+            //ถ้า id =/= รหัสนักเรียนในตำแหน่งใด ๆ ของ string[] sid และ ไอดี =/= กล่องข้อความว่าง ๆ
+            if (id != sid[0] && id != sid[1] && id != sid[2] && id != sid[3] && id != sid[4] && id != "") 
+            {
+                hpB_gB(); //เรียกใช้เมธอด hpB_gB
+                pictureBox3.Visible = true;
+                MessageBox.Show("ไม่พบรายชื่อในระบบ", "คำเตือน", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clear(); //เรียกใช้เมธอด clear
+                return;
+            }
+            //ถ้า ไอดี = กล่องข้อความว่าง ๆ
+            if (id == "")
+            {
+                hpB_gB(); //เรียกใช้เมธอด hpB_gB
+                pictureBox3.Visible = true;
+                MessageBox.Show("กรุณากรอกข้อมูล", "คำเตือน", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clear(); //เรียกใช้เมธอด clear
+                return;
+            }
+
+            label3.Text = "ชื่อ : " + name + "\nวันเกิด : " + bday + "\nอายุ : " + age + "\nส่วนสูง : " + height + "\nกรุ๊ปเลือด : " + gb;
+            pictureBox2.Visible = true;
+            groupBox1.Visible = true;
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e) //อีเว้นท์ keyUp จาก textBox1 ไป button1
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.Focus();
+            }
+        }
+
+        private void button1_KeyUp(object sender, KeyEventArgs e) //อีเว้นท์ keyUp จาก button1ไป textBox1
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox1.Focus();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e) //ปุ่มออก
+        {
+            if (MessageBox.Show("ต้องการออกจากโปรแกรมหรือไม่", "ออก", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e) //ปุ่มยกเลิก
+        {
+            clear(); //เรียกใช้เมธอด clear
+        } 
+    }
+}
