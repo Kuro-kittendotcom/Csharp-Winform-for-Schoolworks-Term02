@@ -21,10 +21,6 @@ namespace โปรแกรมแม่สูตรคูณ
 {
     public partial class Form1 : Form
     {
-        double x = 0, y = 0;
-        string z = "";
-        //ประกาศตัวแปรประเภท double กับ string และประกาศค่าเริ่มต้นให้ตัวแปร
-
         public Form1()
         {
             InitializeComponent();
@@ -38,6 +34,10 @@ namespace โปรแกรมแม่สูตรคูณ
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+        double x = 0, y = 0;
+        string z = "";
+        //ประกาศตัวแปรประเภท double กับ string และประกาศค่าเริ่มต้นให้ตัวแปร
+        
             bool ez = double.TryParse(textBox1.Text, out y);
             //ประกาศตัวแปร boolean ez ใช้เก็บค่าตรรกศาสตร์จาก double.TryParse
             //โดยจะเก็บค่าเป็น true ก็ต่อเมื่อมันสามารถแปลงค่าจาก textBox1 ซึ่งเป็นข้อมูลประเภท string ไปเป็น double 
